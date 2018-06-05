@@ -56,7 +56,6 @@ public abstract class AbstractGraph<T> {
         } while (j != i);
         System.out.println();
     }
-
     private void depthfs(int i, boolean[] visited) {
         System.out.print(this.getVertex(i) + " ");
         visited[i] = true;
@@ -68,4 +67,6 @@ public abstract class AbstractGraph<T> {
             j = this.next(i, j);
         }
     }
+
+
 }
