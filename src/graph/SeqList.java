@@ -145,19 +145,20 @@ public class SeqList<T> extends Object {
 
     public void showAll() {
         for (int i = 0; i < n; i++) {
-            System.out.print(element[i]
-            );
+            System.out.print(element[i]);
             System.out.print('\t');
         }
         System.out.print('\n');
     }
 
     public String toString() {
-        String str = "[";
-        for (int i = 0; i < this.n; i++) {
-            // System.out.print(this.element[i]);
-            str = str + this.element[i] + " ";
+        String str = this.getClass().getName() + "(";
+        if (this.n > 0) {
+            str += this.element[0].toString();
         }
-        return str + "\b]";
+        for (int i = 1; i < this.n; i++) {
+            str += "," + this.element[i].toString();
+        }
+        return str + ")";
     }
 }

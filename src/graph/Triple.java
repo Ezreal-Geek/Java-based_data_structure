@@ -22,4 +22,8 @@ public class Triple implements Comparable<Triple> {
         }
         return (this.row < tri.row || this.row == tri.row && this.column < tri.column) ? -1 : 1;
     }
+
+    public String toString() {
+        return value + "";
+    }
 }

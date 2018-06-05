@@ -1,4 +1,4 @@
-package LinearList.SinglyList;
+package graph;
 
 public class Node<T> {
 

@@ -1,6 +1,8 @@
 package LinearList.SinglyList;
 
 
+import tree.Node;
+
 public class SinglyList<T> extends Object {
 
     public Node<T> head;
@@ -23,13 +25,28 @@ public class SinglyList<T> extends Object {
         String str = this.getClass().getName() + "(";
         for (Node<T> p = this.head.next; p != null; p = p.next) {
             str += p.data.toString();
-            if (p != null) {
+            if (p.next != null) {
                 str += ",";
             }
         }
         return str + ")";
     }
 
+    public Node<T> insert(int i, T x) {
+        if (x == null) {
+            throw new NullPointerException();
+        }
+        Node<T> front = this.head;
+        for (int j = 0; front.next != null && j < i; j++) {
+            front = front.next;
+        }
+        front.next = new Node<T>(x, front.next);
+        return front.next;
+    }
+
+    public Node<T> insert(T x) {
+        return insert(Integer.MAX_VALUE, x);
+    }
 
     public Node<T> search(T key) {
         Node<T> t = this.head.next;

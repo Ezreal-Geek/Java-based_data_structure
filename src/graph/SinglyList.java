@@ -1,4 +1,4 @@
-package tree;
+package graph;
 
 
 public class SinglyList<T> extends Object {
@@ -41,6 +41,7 @@ public class SinglyList<T> extends Object {
         front.next = new Node<T>(x, front.next);
         return front.next;
     }
+
     public Node<T> insert(T x) {
         return insert(Integer.MAX_VALUE, x);
     }

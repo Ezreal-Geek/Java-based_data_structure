@@ -13,5 +13,9 @@ public class Node<T> {
     public Node() {
         this(null, null);
     }
+
+    public String toSring() {
+        return this.data.toString();
+    }
 }
 

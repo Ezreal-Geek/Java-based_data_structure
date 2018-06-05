@@ -17,6 +17,17 @@ public class SeqList<T> extends Object {
         return this.n == 0;
     }
 
+    public String toString() {
+        String str = this.getClass().getName() + "(";
+        if (this.n > 0) {
+            str += this.element[0].toString();
+        }
+        for (int i = 1; i < this.n; i++) {
+            str += "," + this.element[i].toString();
+        }
+        return str + ")";
+    }
+
     // 在位置i插入x
     public int insert(int i, T x) {
         if (x == null) {
